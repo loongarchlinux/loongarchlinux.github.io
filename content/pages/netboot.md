@@ -7,6 +7,8 @@ draft = false
 
 ## 关于网络启动
 
+![](/pages/images/ipxe.png)
+
 网络引导(Netboot)镜像是个非常小的文件（大约1~2M），可用于在系统启动时从网络下载最新的 Arch Linux 版本。 网络引导(Netboot)镜像本身无需更新，最新发布版本将自动可用。
 
 网络引导(Netboot) 是使用自定义 iPXE 构建的。 live 系统的 Linux 内核、initramfs 和 squashfs 文件是从 Arch Linux 镜像下载的。

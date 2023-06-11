@@ -31,7 +31,7 @@ Github Packages 提供了官方 Docker 镜像，您可以使用以下命令获�
 docker pull ghcr.io/loongarchlinux/archlinux:latest
 ```
 
-## VM 镜像
+## 虚拟机镜像
 
 您可从以下镜像仓库下载 QEMU qcow2 镜像，您可能希望了解如何从[虚拟机运行](/pages/vmrun/)系统。
 
