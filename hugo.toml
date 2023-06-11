@@ -1,0 +1,85 @@
+baseURL = "https://loongarchlinux.org/"
+languageCode = "zh-cn"
+title = "Loong Arch Linux"
+theme = "arch"
+
+[markup.goldmark.renderer]
+unsafe= true
+
+[[menu.main]]
+  Name = "首页"
+  URL = "/"
+  Title = "返回到主页面"
+  weight = -7
+
+[[menu.main]]
+  Name = "下载"
+  URL = "/pages/download/"
+  Title = "下载 Loong Arch Linux"
+  weight = 0
+
+[[menu.main]]
+  Name = "AUR"
+  URL = "https://aur.archlinux.org/"
+  Title = "Arch Linux User Repository"
+  weight = -1
+  [menu.main.params]
+    blank = true
+
+[[menu.main]]
+  Name = "软件包"
+  URL = "/pages/packages/"
+  Title = "Loong Arch Linux 软件包数据库"
+  weight = -6
+
+[[menu.sidebar_user]]
+  Name = "用户论坛"
+  URL = "https://bbs.loongarch.org/t/archlinux-distro"
+  Title = "Loong Arch Linux 用户论坛"
+  weight = 1
+  [menu.sidebar_user.params]
+    blank = true
+
+[[menu.sidebar_user]]
+  Name = "安装指南"
+  URL = "/pages/install/"
+  Title = "Loong Arch Linux 安装指南"
+  weight = 2
+
+[[menu.sidebar_user]]
+  Name = "镜像列表"
+  URL = "/pages/mirrorlist/"
+  Title = "Loong Arch Linux 镜像列表"
+  weight = 3
+
+[[menu.sidebar_develop]]
+  Name = "开发者论坛"
+  URL = "https://github.com/orgs/loongarchlinux/discussions"
+  Title = "Loong Arch Linux 开发者论坛"
+  weight = -1
+  [menu.sidebar_develop.params]
+    blank = true
+
+[[menu.sidebar_resource]]
+  Name = "Great Loongson Union"
+  URL = "https://github.com/loongson"
+  Title = "Great Loongson Union"
+  weight = 1
+  [menu.sidebar_resource.params]
+    blank = true
+
+[[menu.sidebar_resource]]
+  Name = "LoongArch64"
+  URL = "https://github.com/loongarch64"
+  Title = "LoongArch64"
+  weight = 2
+  [menu.sidebar_resource.params]
+    blank = true
+
+[[menu.sidebar_resource]]
+  Name = "LoongArch 开放社区"
+  URL = "https://loongarch.dev"
+  Title = "LoongArch 开放社区"
+  weight = 3
+  [menu.sidebar_resource.params]
+    blank = true
