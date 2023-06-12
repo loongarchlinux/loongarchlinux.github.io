@@ -1,0 +1,17 @@
+mirrors = [
+    "https://mirrors.wsyu.edu.cn/loongarch/archlinux",
+    "https://mirrors.pku.edu.cn/loongarch/archlinux",
+    "https://mirrors.nju.edu.cn/loongarch/archlinux",
+    "https://mirror.iscas.ac.cn/loongarch/archlinux",
+]
+
+origins = [
+    "https://loongarchlinux.org",
+    "http://localhost:1313",
+]
+
+repodir= "/tmp/archloong/"
+sqlite = "/tmp/test.db"
+
+web_port = 8080
+web_mode = "release"
