@@ -30,4 +30,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           allow_empty_commit: true
           publish_dir: ./public
+          cname: loongarchlinux.org
           force_orphan: true
