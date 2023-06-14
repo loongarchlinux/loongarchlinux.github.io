@@ -1,0 +1,43 @@
++++
+title = "Packages"
+author = ""
+date = 2023-06-14T21:21:37+08:00
+draft = false
+type = "packages"
++++
+
+<form id="pkg-search" method="get" action="/packages/">
+	<p><input type="hidden" name="sort" id="id_sort"></p>
+	<fieldset>
+		<legend>Enter search criteria</legend>
+		<div>
+			<label for="id_arch" title="Limit results a specific CPU architecture">Arch</label>
+			<select name="arch" id="id_arch" multiple>
+				<option value="any">any</option>
+				<option value="loong64">loong64</option>
+			</select>
+		</div>
+		<div>
+			<label for="id_repo" title="Limit results to a specific repository">
+				Repository</label><select name="repo" id="id_repo" multiple>
+				<option value="Core">Core</option>
+				<option value="Core-Testing">Core-Testing</option>
+				<option value="Extra">Extra</option>
+				<option value="Extra-Testing">Extra-Testing</option>
+			</select></div>
+			<div>
+				<label for="id_q" title="Enter keywords as desired (provides are also supported e.g. 'java-environment=7')">
+					Keywords</label>
+				<input type="text" name="q" value="" autofocus maxlength="100" size="30" id="id_q"></div>
+			<div>
+				<div><label>&nbsp;</label>
+					<input title="Search for packages using this criteria" type="submit" value="Search" />
+				</div>
+	</fieldset>
+</form>
+
+<div id="pkglist-results" class="box">
+	<div class="pkglist-stats">
+		<p>0 matching packages found.</p>
+	</div>
+</div>
