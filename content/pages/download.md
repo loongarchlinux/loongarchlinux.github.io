@@ -35,7 +35,7 @@ docker pull ghcr.io/loongarchlinux/archlinux:latest
 
 您可从以下镜像仓库下载 QEMU qcow2 镜像，您可能希望了解如何从[虚拟机运行](/pages/vmrun/)系统。
 
-- [https://mirrors.wsyu.edu.cn](https://mirrors.wsyu.edu.cn/loongarch/archlinux/iimages/)
+- [https://mirrors.wsyu.edu.cn](https://mirrors.wsyu.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.pku.edu.cn](https://mirrors.pku.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.nju.edu.cn](https://mirrors.nju.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.iscas.ac.cn](https://mirrors.iscas.ac.cn/loongarch/archlinux/images/)
