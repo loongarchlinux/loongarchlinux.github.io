@@ -54,7 +54,7 @@ unsafe= true
 
 [[menu.sidebar_user]]
   Name = "归档文章"
-  URL = "/pages/"
+  URL = "/posts/"
   Title = "Loong Arch Linux 归档文章"
   weight = 8
 
