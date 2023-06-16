@@ -1,0 +1,18 @@
+{{- if or .Prev .Next -}}
+<div class="post-navs d-flex mb-3 justify-content-between">
+  <div class="post-nav w-50">
+  {{- with .Prev -}}
+    <div class="prev-post">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+  {{- end -}}
+  </div>
+  <div class="post-nav flex-row-reverse">
+  {{- with .Next -}}
+    <div class="next-post">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </div>
+  {{- end -}}
+  </div>
+</div>
+{{- end -}}

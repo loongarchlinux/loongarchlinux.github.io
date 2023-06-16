@@ -1,0 +1,101 @@
+[alipay]
+other = "支付寶"
+
+[archives]
+other = "歸檔"
+
+[categories]
+other = "分類"
+
+[color_blue]
+other = "藍色"
+
+[color_blue_gray]
+other = "藍灰色"
+
+[color_brown]
+other = "棕色"
+
+[color_cyan]
+other = "青色"
+
+[color_green]
+other = "綠色"
+
+[color_indigo]
+other = "靛青色"
+
+[color_orange]
+other = "橙色"
+
+[color_pink]
+other = "粉色"
+
+[color_purple]
+other = "紫色"
+
+[color_red]
+other = "紅色"
+
+[color_teal]
+other = "藍綠色"
+
+[color_yellow]
+other = "黃色"
+
+[copyright]
+other = "版權"
+
+[post_license]
+other = "本作品採用 {{ .license }} 授權。"
+
+[featured_posts]
+other = "精選文章"
+
+[font_size]
+other = "字體大小"
+
+[home]
+other = "主頁"
+
+[load_more]
+other = "加載更多"
+
+[pagination_title]
+other = "第 {{ .PageNumber }} 頁"
+
+[reading_time]
+other = "{{ .ReadingTime }} 分鐘閱讀"
+
+[recent_posts]
+other = "最近文章"
+
+[related_posts]
+other = "相關文章"
+
+[reward]
+other = "打賞"
+
+[search]
+other = "搜尋"
+
+[search_missing_keywords]
+other = "請輸入搜尋關鍵詞"
+
+[search_no_results]
+other = "找不到相關結果"
+
+[search_stat]
+other = "找到相關結果 {{ .Total }} 個"
+
+[series]
+other = "專欄"
+
+[table_of_contents]
+other = "目錄"
+
+[tags]
+other = "標籤"
+
+[wechat]
+other = "微信"

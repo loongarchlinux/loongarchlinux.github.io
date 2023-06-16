@@ -1,0 +1,42 @@
+{{- $reward := .Site.Params.reward }}
+{{- if and $reward (default true .Params.reward) -}}
+<div class="post-reward mb-4 text-center">
+  <button type="button" class="btn btn-reward" data-toggle="modal" data-target="#rewardModal">
+    <i class="fas fa-fw fa-medal"></i>{{ i18n "reward" }}
+  </button>
+</div>
+
+{{- $icons := dict "wechat" "weixin" -}}
+<div class="modal fade" id="rewardModal" tabindex="-1" aria-labelledby="rewardModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content surface">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewardModalLabel"><i class="fas fa-fw fa-medal"></i>{{ i18n "reward" }}</h5>
+        <a href="#" data-dismiss="modal" aria-label="Close"><i class="fas fa-fw fa-times"></i></a>
+      </div>
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3" role="tablist">
+          {{- $index := 0 -}}
+          {{- range $key, $value := $reward -}}
+          <li class="nav-item" role="presentation">
+            <a class="nav-link{{ if eq $index 0 }} active{{ end }}" id="reward-{{ $key }}-tab" data-toggle="tab" href="#reward-{{ $key }}" role="tab" aria-controls="reward-{{ $key }}" aria-selected="true">
+              <i class="fab fa-fw fa-{{ default $key (index $icons $key) }}"></i>{{ i18n $key }}
+            </a>
+          </li>
+          {{- $index = add $index 1 -}}
+          {{- end -}}
+        </ul>
+        <div class="tab-content" id="rewardTabContent">
+          {{- $index = 0 -}}
+          {{- range $key, $value := $reward -}}
+          <div class="tab-pane fade post-reward-content show{{ if eq $index 0 }} active{{ end }}" id="reward-{{ $key }}" role="tabpanel" aria-labelledby="reward-{{ $key }}-tab">
+            <img class="img-fluid post-reward-img" src="{{ absURL $value }}" loading="lazy" />
+          </div>
+          {{- $index = add $index 1 -}}
+          {{- end -}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{- end -}}

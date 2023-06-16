@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ .Lang }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="theme-color" content="#08C">
+		<title>{{- block "title" . -}}{{- partial "head/title" . -}}{{- end -}}</title>
+		{{ partial "head.html" . }}
+		{{- block "head-end" . -}}{{- end -}}
+		{{- partial "hooks/head-end" . -}}
+	</head>
+	<body>
+		{{- partial "header.html" . -}}
+		{{- partial "hooks/main-begin" . -}}
+		<div id="content">
+			<div id="archdev-navbar"></div>
+			{{- block "content" . -}}{{- end -}}
+		</div>
+		{{- partial "hooks/main-end" . -}}
+		{{- partial "hooks/body-end" . -}}
+		{{- partial "footer.html" . -}}
+	</body>
+</html>

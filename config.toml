@@ -1,7 +1,19 @@
 baseURL = "https://loongarchlinux.org/"
 languageCode = "zh-cn"
 title = "Loong Arch Linux"
-theme = "arch"
+#theme = "arch"
+theme = "loongarchlinux"
+description = "一个极快、响应式和功能丰富的 Hugo 博客主题"
+copyright = "Copyright © {year} Community Team. All Rights Reserved."
+
+dateFormat = "2006年01月02日"
+
+hasCJKLanguage = true
+paginate = 5
+lang="zh-cn"
+
+[archive]
+  dateFormat = "01-02"
 
 [markup.goldmark.renderer]
 unsafe= true
@@ -23,8 +35,6 @@ unsafe= true
   URL = "https://aur.archlinux.org/"
   Title = "Arch Linux User Repository"
   weight = -1
-  [menu.main.params]
-    blank = true
 
 [[menu.main]]
   Name = "软件包"
@@ -37,8 +47,6 @@ unsafe= true
   URL = "https://bbs.loongarch.org/t/archlinux-distro"
   Title = "Loong Arch Linux 用户论坛"
   weight = 1
-  [menu.sidebar_user.params]
-    blank = true
 
 [[menu.sidebar_user]]
   Name = "安装指南"
@@ -63,37 +71,27 @@ unsafe= true
   URL = "https://github.com/loongarchlinux"
   Title = "GitHub 源码包仓库"
   weight = 1
-  [menu.sidebar_develop.params]
-    blank = true
 
 [[menu.sidebar_develop]]
   Name = "开发者论坛"
   URL = "https://github.com/orgs/loongarchlinux/discussions"
   Title = "Loong Arch Linux 开发者论坛"
   weight = 2
-  [menu.sidebar_develop.params]
-    blank = true
 
 [[menu.sidebar_resource]]
   Name = "Great Loongson Union"
   URL = "https://github.com/loongson"
   Title = "Great Loongson Union"
   weight = 1
-  [menu.sidebar_resource.params]
-    blank = true
 
 [[menu.sidebar_resource]]
   Name = "LoongArch64"
   URL = "https://github.com/loongarch64"
   Title = "LoongArch64"
   weight = 2
-  [menu.sidebar_resource.params]
-    blank = true
 
 [[menu.sidebar_resource]]
   Name = "LoongArch 开放社区"
   URL = "https://loongarch.dev"
   Title = "LoongArch 开放社区"
   weight = 3
-  [menu.sidebar_resource.params]
-    blank = true

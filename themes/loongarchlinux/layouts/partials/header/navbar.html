@@ -1,0 +1,12 @@
+{{- $baseURL := $.Site.BaseURL -}}
+<div id="archnavbar" class="anb-home">
+	<div id="archnavbarlogo"><h1><a href="/" title="{{ .Site.Title }}">{{ .Site.Title }}</a></h1></div>
+		<div id="archnavbarmenu">
+				<ul id="archnavbarlist">
+						{{ range .Site.Menus.main }}
+						{{- $url := absLangURL .URL -}}
+						<li class="anb-{{ .Name }}"><a href="{{ .URL }}" title="{{ .Title  }}"{{ if not (hasPrefix $url $baseURL) }} target="_blank"{{ end }}>{{ .Name }}</a></li>
+						{{ end }}
+				</ul>
+		</div>
+</div>

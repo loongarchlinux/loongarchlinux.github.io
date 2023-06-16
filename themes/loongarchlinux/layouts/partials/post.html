@@ -1,0 +1,8 @@
+<h2 itemprop="headline">{{ .Title }}</h2>
+{{- partial "post/meta" . -}}
+{{- partial "hooks/content-begin" . -}}
+<p class="article-info">{{ .Page.Date.Format "2006年01月02日" }} - {{ .Params.Author }}</p>
+<div class="article-content" itemprop="articleBody">
+	{{- .Content -}}
+</div>
+{{- partial "hooks/content-end" . -}}

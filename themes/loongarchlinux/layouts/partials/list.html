@@ -1,0 +1,26 @@
+<p> 总计{{ .Paginator.TotalNumberOfElements }}篇文章，当前位于 {{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }} 页。</p>
+{{- partial "pagination" . -}}
+
+{{- $pages := (.Paginate .RegularPagesRecursive).Pages -}}
+<table id="article-list" class="results">
+	<thead>
+		<tr>
+			<th>日期</th>
+			<th>标题</th>
+			<th>作者</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{- range $pages }}
+		<tr>
+			<td>{{ .Page.Date.Format "2006年01月02日" }}</td>
+			<td class="wrap"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ default .Title .Params.heading }}</a></td>
+			<td>{{ .Params.Author }}</td>
+		</tr>
+		{{ end }}
+	</tbody>
+</table>
+
+{{- partial "hooks/list-end" . -}}
+<p> 总计{{ .Paginator.TotalNumberOfElements }}篇文章，当前位于 {{ .Paginator.PageNumber }} / {{ .Paginator.TotalPages }} 页。</p>
+{{- partial "pagination" . -}}

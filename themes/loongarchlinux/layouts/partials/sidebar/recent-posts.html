@@ -1,0 +1,8 @@
+<div id="nav-sidebar" class="widget">
+  <h4>最新文章</h4>
+  <ul>
+  {{- range first (default 5 .Site.Params.recentPostCount) (where site.RegularPages "Type" "in" site.Params.mainSections) -}}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+  {{- end -}}
+  </ul>
+</div>

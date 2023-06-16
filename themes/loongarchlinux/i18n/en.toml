@@ -1,0 +1,101 @@
+[alipay]
+other = "Alipay"
+
+[archives]
+other = "Archives"
+
+[categories]
+other = "Categories"
+
+[color_blue]
+other = "Blue"
+
+[color_blue_gray]
+other = "Blue Gray"
+
+[color_brown]
+other = "Brown"
+
+[color_cyan]
+other = "Cyan"
+
+[color_green]
+other = "Green"
+
+[color_indigo]
+other = "Indigo"
+
+[color_orange]
+other = "Orange"
+
+[color_pink]
+other = "Pink"
+
+[color_purple]
+other = "Purple"
+
+[color_red]
+other = "Red"
+
+[color_teal]
+other = "Teal"
+
+[color_yellow]
+other = "Yellow"
+
+[copyright]
+other = "Copyright"
+
+[post_license]
+other = "This work is licensed under {{ .license }}."
+
+[featured_posts]
+other = "Featured Posts"
+
+[font_size]
+other = "Font Size"
+
+[home]
+other = "Home"
+
+[load_more]
+other = "Load More"
+
+[pagination_title]
+other = "Page {{ .PageNumber }}"
+
+[reading_time]
+other = "{{ .ReadingTime }} min read"
+
+[recent_posts]
+other = "Recent Posts"
+
+[related_posts]
+other = "Related Posts"
+
+[reward]
+other = "Reward"
+
+[search]
+other = "Search"
+
+[search_missing_keywords]
+other = "Please enter search keywords"
+
+[search_no_results]
+other = "No results found"
+
+[search_stat]
+other = "Found {{ .Total }} results"
+
+[series]
+other = "Series"
+
+[table_of_contents]
+other = "Table Of Contents"
+
+[tags]
+other = "Tags"
+
+[wechat]
+other = "WeChat"
