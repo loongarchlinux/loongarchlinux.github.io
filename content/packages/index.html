@@ -6,38 +6,117 @@ draft = false
 type = "packages"
 +++
 
-<form id="pkg-search" method="get" action="/packages/">
-	<p><input type="hidden" name="sort" id="id_sort"></p>
-	<fieldset>
-		<legend>Enter search criteria</legend>
-		<div>
-			<label for="id_arch" title="Limit results a specific CPU architecture">Arch</label>
-			<select name="arch" id="id_arch" multiple>
-				<option value="any">any</option>
-				<option value="loong64">loong64</option>
-			</select>
-		</div>
-		<div>
-			<label for="id_repo" title="Limit results to a specific repository">
-				Repository</label><select name="repo" id="id_repo" multiple>
-				<option value="Core">Core</option>
-				<option value="Core-Testing">Core-Testing</option>
-				<option value="Extra">Extra</option>
-				<option value="Extra-Testing">Extra-Testing</option>
-			</select></div>
+<div id="pkglist-search" class="box filter-criteria">
+	<h2>Package Search</h2>
+	<form id="pkg-search" method="get" action="/packages/">
+		<p><input type="hidden" name="sort" id="id_sort"></p>
+		<fieldset>
+			<legend>Enter search criteria</legend>
 			<div>
-				<label for="id_q" title="Enter keywords as desired (provides are also supported e.g. 'java-environment=7')">
-					Keywords</label>
-				<input type="text" name="q" value="" autofocus maxlength="100" size="30" id="id_q"></div>
+				<label for="id_arch" title="Limit results a specific CPU architecture">Arch</label>
+				<select name="arch" id="id_arch" multiple>
+					<option value="any">any</option>
+					<option value="loong64">loong64</option>
+				</select>
+			</div>
 			<div>
-				<div><label>&nbsp;</label>
-					<input title="Search for packages using this criteria" type="submit" value="Search" />
-				</div>
-	</fieldset>
-</form>
+				<label for="id_repo" title="Limit results to a specific repository">
+					Repository</label><select name="repo" id="id_repo" multiple>
+					<option value="Core">Core</option>
+					<option value="Core-Testing">Core-Testing</option>
+					<option value="Extra">Extra</option>
+					<option value="Extra-Testing">Extra-Testing</option>
+					<option value="Extra">Laur</option>
+					<option value="Extra-Testing">Laur-Testing</option>
+				</select></div>
+				<div>
+					<label for="id_q" title="Enter keywords as desired (provides are also supported e.g. 'java-environment=7')">
+						Keywords</label>
+					<input type="text" name="q" value="" autofocus maxlength="100" size="30" id="id_q"></div>
+				<div>
+					<div><label>&nbsp;</label>
+						<input title="Search for packages using this criteria" type="submit" value="Search" />
+					</div>
+		</fieldset>
+	</form>
+</div>
 
 <div id="pkglist-results" class="box">
 	<div class="pkglist-stats">
-		<p>0 matching packages found.</p>
+
+		<p>13923 matching packages found.
+		Page 1 of 140.</p>
+
+		<div class="pkglist-nav">
+			<span class="prev">
+
+				&lt; Prev
+
+			</span>
+			<span class="next">
+
+				<a href="?page=2&amp;"
+					 title="Go to next page" rel="next">Next &gt;</a>
+
+			</span>
+		</div>
+
 	</div>
+
+
+	<form id="pkglist-results-form" method="post" action="/packages/update/"><input type="hidden" name="csrfmiddlewaretoken" value="LnRLOMzX1yfqcTQidAJ3NHJnVKhn2WvEupOZcbMCK7nOls51xFIm3pGe23inQX1F">
+		<table class="results">
+			<thead>
+				<tr>
+
+					<th><a href="/packages/?sort=arch"
+								 title="Sort packages by architecture">Arch</a></th>
+					<th><a href="/packages/?sort=repo"
+								 title="Sort packages by repository">Repo</a></th>
+					<th><a href="/packages/?sort=pkgname"
+								 title="Sort packages by package name">Name</a></th>
+					<th>Version</th>
+					<th>Description</th>
+					<th><a href="/packages/?sort=-last_update"
+								 title="Sort packages by last update">Last Updated</a></th>
+					<th>Download</th>
+					<th>Source</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>loong64</td>
+					<td>Extra</td>
+					<td><a href="/packages/extra/x86_64/0ad/" title="View package details for 0ad">0ad</a></td>
+
+					<td>a26-7</td>
+
+					<td class="wrap">Cross-platform, 3D and historically-based real-time strategy game</td>
+					<td>2023-05-19</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="pkglist-stats">
+
+			<p>13923 matching packages found.
+			Page 1 of 140.</p>
+
+			<div class="pkglist-nav">
+				<span class="prev">
+
+					&lt; Prev
+
+				</span>
+				<span class="next">
+
+					<a href="?page=2&amp;"
+						 title="Go to next page" rel="next">Next &gt;</a>
+
+				</span>
+			</div>
+
+		</div>
+	</form>
 </div>
