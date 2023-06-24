@@ -91,127 +91,6 @@ type = "package"
 		</div>
 </div>
 
-<script type="text/javascript">
-	function ajaxifyFiles() {
-		filelink.addEventListener("click", function(event) {
-			event.preventDefault();
-			console.log(event.target.href);
-			fetch(event.target.href).then(response => response.json()).then(data => {
-				const fragment = document.createDocumentFragment();
-				data.files.forEach((value, i) => {
-					const cls = value.match(/\/$/) ? 'd' : 'f';
-					const elem = document.createElement('li');
-					elem.classList.add(cls);
-					elem.textContent = value
-					fragment.appendChild(elem);
-				});
-
-				const pkgfilelist = document.getElementById("pkgfilelist");
-				while(pkgfilelist.firstChild) {
-					pkgfilelist.removeChild(pkgfilelist.firstChild);
-				}
-
-				const textElem = document.createElement("p");
-				textElem.classList.add("message");
-
-				if (data.pkg_last_update > data.files_last_update) {
-					textElem.textContent = "Note: This file list was generated from a previous version of the package; it may be out of date.";
-					pkgfilelist.appendChild(textElem);
-				}
-
-				if (data.files.length > 0) {
-					const elem = document.createElement("ul");
-					elem.appendChild(fragment);
-					pkgfilelist.appendChild(elem);
-				} else if (data.files_last_update === null) {
-					textElem.textContent = "No file list available.";
-					pkgfilelist.appendChild(textElem);
-				} else {
-					textElem.textContent = "Package has no files.";
-					pkgfilelist.appendChild(textElem);
-				}
-			});
-		});
-	}
-
-	function collapseDependsList(list) {
-		// Hide everything past a given limit. Don't do anything if we don't have
-		// enough items, or the link already exists.
-		const limit = 20;
-		const elem = document.querySelector(list);
-		const linkid = elem.getAttribute('id') + 'link';
-		const items = Array.from(elem.querySelectorAll('li')).slice(limit);
-
-		if (items.length <= 1 || document.querySelectorAll('#' + linkid).length > 0) {
-			return;
-		}
-
-		items.forEach(item => item.style.display = 'none');
-
-		const link = document.createElement("A");
-		link.setAttribute('href', '#');
-		link.id = linkid;
-		link.textContent = "Show More…";
-		const p = document.createElement("p");
-		p.appendChild(link);
-		elem.insertAdjacentElement('afterend', p);
-
-		// add link and wire it up to show the hidden items
-		document.getElementById(linkid).addEventListener('click', function(event) {
-			event.preventDefault();
-			Array.from(elem.querySelectorAll('li')).forEach(item => item.style.display = '');
-			// remove the full <p/> node from the DOM
-			event.target.parentElement.removeChild(event.target);
-		});
-	}
-
-	function getfilesize(size) {
-		if (!size)
-			return "";
-
-		var num = 1024.00;
-
-		if (size < num)
-			return size + "B";
-		if (size < Math.pow(num, 2))
-			return (size / num).toFixed(2) + "K";
-		if (size < Math.pow(num, 3))
-			return (size / Math.pow(num, 2)).toFixed(2) + "M";
-		if (size < Math.pow(num, 4))
-			return (size / Math.pow(num, 3)).toFixed(2) + "G";
-		return (size / Math.pow(num, 4)).toFixed(2) + "T";
-	}
-
-	function showpackager(result) {
-		let packager_array = result.packager.split('<');
-		let user = packager_array[0].replace(/(\s*$)/g,"");
-		let email = packager_array[1].replace(">", "").replace(/(\s*$)/g,"");
-		$('#a_packager').html(user).attr("href", "mailto:"+email).attr("title", "Send email to " + user);
-	}
-
-	function showdeps(result) {
-		var deps_count = result.depends.length + result.optdepends.length + result.makedepends.length + result.checkdepends.length;
-		$('#h3_deps_count').text("Dependencies (" + deps_count + ")");
-		for(var i=0;i< result.depends.length;i++){
-			$li = $("<li><a href=\"/packages/?q=" + result.depends[i] +"\">" + result.depends[i] + "</a></li>");
-			$("#pkgdepslist").append($li);
-		}
-		for(var i=0;i< result.optdepends.length;i++){
-			$li = $("<li><a href=\"/packages/?q=" + result.optdepends[i] +"\">" + result.optdepends[i] + "</a> (optional)</li>");
-			$("#pkgdepslist").append($li);
-		}
-		for(var i=0;i< result.makedepends.length;i++){
-			$li = $("<li><a href=\"/packages/?q=" + result.makedepends[i] +"\">" + result.makedepends[i] + "</a> (make)</li>");
-			$("#pkgdepslist").append($li);
-		}
-		for(var i=0;i< result.checkdepends.length;i++){
-			$li = $("<li><a href=\"/packages/?q=" + result.checkdepends[i] +"\">" + result.checkdepends[i] + "</a> (check)</li>");
-			$("#pkgdepslist").append($li);
-		}
-		collapseDependsList("#pkgdepslist");
-	}
-</script>
-
 <script>
 	$(document).ready(function() {
 		var baseurl = "https://archapi.zhcn.cc/api/v1"
@@ -232,7 +111,7 @@ type = "package"
 				$('#td_license').html(result.licenses.join(","));
 				$('#td_size').html(getfilesize(result.compressed_size));
 				$('#td_isize').html(getfilesize(result.installed_size));
-				$('#td_build_date').html(result.build_date);
+				$('#td_build_date').html(new Date(result.build_date).Format("yyyy-MM-dd HH:mm:ss"));
 				$('#filelink').attr("href", baseurl + "/package/files/" + $(location).attr('search')).attr("title", "Click to view the complete file list for " + result.pkgname);
 				ajaxifyFiles();
 				showpackager(result);
