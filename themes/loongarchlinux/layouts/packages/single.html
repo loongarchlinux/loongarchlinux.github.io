@@ -1,3 +1,107 @@
-{{ define "content" }}
+{{ define "head-end" }}
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script>
+		//jquery将日期转换成指定格式的字符串
+		Date.prototype.Format = function (fmt) {
+			var o = {
+				"M+": this.getMonth() + 1,
+				"d+": this.getDate(),
+				"H+": this.getHours(),
+				"m+": this.getMinutes(),
+				"s+": this.getSeconds(),
+				"q+": Math.floor((this.getMonth() + 3) / 3),
+				"S": this.getMilliseconds()
+			};
+			if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+			for (var k in o)
+				if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			return fmt;
+		}
+		function doSort(name)
+		{
+			let searchParams = new URLSearchParams(window.location.search);
+			if (searchParams.has("sort"))  {
+				let sort_value = searchParams.get("sort");
+				if (sort_value == name ) {
+					searchParams.set("sort", "-" + name);
+				} else if (sort_value == "-" + name ) {
+					searchParams.set("sort", name);
+				} else {
+					searchParams.set("sort", name);
+				}
+			} else {
+				searchParams.set("sort", name);
+			}
+			window.location.search = searchParams.toString();
+		}
+
+		function updatePage(page_num, page_count) {
+			let searchParams = new URLSearchParams(window.location.search);
+			if (page_num > 1) {
+				let n = parseInt(page_num) - 1;
+				searchParams.set("page", n);
+				$prev = $("<a href=\"?" + searchParams.toString() + "\" title=\"Go to prev page\" rel=\"prev\">&lt; Prev</a>");
+				$(".prev").html($prev);
+			} else {
+				$(".prev").text("< Prev");
+			}
+
+			if (page_num < page_count) {
+				let n = parseInt(page_num) + 1;
+				searchParams.set("page", n);
+				$next = $("<a href=\"?" + searchParams.toString() + "\" title=\"Go to next page\" rel=\"next\">Next &gt;</a>");
+				$(".next").html($next);
+			} else {
+				$(".next").text("Next >");
+			}
+		}
+
+		function updateResults(query=window.location.search) {
+			var baseurl = "http://10.10.10.50:8080/api/v1"
+			var url = baseurl + "/packages/" + query;
+			$.ajax({
+				url: url,
+				dataType: "json",
+				success:function(data) {
+					let searchParams = new URLSearchParams(window.location.search);
+					if (searchParams.has("q"))  {
+						$("#id_q").attr("value", searchParams.get("q"));
+					} else {
+						$("#id_q").attr("value", "");
+					}
+					if (searchParams.has("arch"))  {
+						$("#id_arch").val(searchParams.get("arch"));
+					}
+					if (searchParams.has("repo"))  {
+						$("#id_repo").val(searchParams.get("repo"));
+					}
+
+					if (data.exacts != null) {
+						for(var i=0;i< data.exacts.length;i++){
+							let pkg = data.exacts[i];
+							$pkg = $("<tr><td>"+pkg.arch+"</td>\r<td>"+pkg.repo+"</td>\r<td><a href=\"/package/?repo="+pkg.repo+"&arch="+pkg.arch+"&name="+pkg.pkgname+"\" title=\"View package details for "+pkg.pkgname+"\">"+pkg.pkgname+"</a></td>\r<td>"+pkg.version+"</td>\r<td class=\"wrap\">"+pkg.pkgdesc+"</td>\r<td>"+new Date(pkg.build_date).Format("yyyy-MM-dd")+"</td><td></td></tr>");
+							$("#tbody_exacts").append($pkg);
+						}
+						$("#exact-matches").show();
+					} else {
+						$("#exact-matches").hide();
+					}
+
+					$(".p_count").text(data.results + " matching packages found. Page "+ data.page_num +" of " + data.page_count +".");
+					if (data.packages != null) {
+						for(var i=0;i< data.packages.length;i++){
+							let pkg = data.packages[i];
+							$pkg = $("<tr><td>"+pkg.arch+"</td>\r<td>"+pkg.repo+"</td>\r<td><a href=\"/package/?repo="+pkg.repo+"&arch="+pkg.arch+"&name="+pkg.pkgname+"\" title=\"View package details for "+pkg.pkgname+"\">"+pkg.pkgname+"</a></td>\r<td>"+pkg.version+"</td>\r<td class=\"wrap\">"+pkg.pkgdesc+"</td>\r<td>"+new Date(pkg.build_date).Format("yyyy-MM-dd")+"</td><td></td></tr>");
+							$("#tbody_results").append($pkg);
+						}
+					}
+					updatePage(data.page_num, data.page_count);
+				}
+			});
+		}
+	</script>
+	{{ end }}
+
+	{{ define "content" }}
 	{{- .Content -}}
-{{ end }}
+	{{ end }}

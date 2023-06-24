@@ -22,17 +22,17 @@ type = "packages"
 			<div>
 				<label for="id_repo" title="Limit results to a specific repository">
 					Repository</label><select name="repo" id="id_repo" multiple>
-					<option value="Core">Core</option>
-					<option value="Core-Testing">Core-Testing</option>
-					<option value="Extra">Extra</option>
-					<option value="Extra-Testing">Extra-Testing</option>
-					<option value="Extra">Laur</option>
-					<option value="Extra-Testing">Laur-Testing</option>
+					<option value="core">Core</option>
+					<option value="core-testing">Core-Testing</option>
+					<option value="extra">Extra</option>
+					<option value="extra-testing">Extra-Testing</option>
+					<option value="laur">Laur</option>
+					<option value="laur-testing">Laur-Testing</option>
 				</select></div>
 				<div>
 					<label for="id_q" title="Enter keywords as desired (provides are also supported e.g. 'java-environment=7')">
 						Keywords</label>
-					<input type="text" name="q" value="" autofocus maxlength="100" size="30" id="id_q"></div>
+					<input type="text" name="q" value="" maxlength="100" size="30" id="id_q"></div>
 				<div>
 					<div><label>&nbsp;</label>
 						<input title="Search for packages using this criteria" type="submit" value="Search" />
@@ -41,82 +41,80 @@ type = "packages"
 	</form>
 </div>
 
+<div id="exact-matches" class="box" style="display: none;">
+	<div class="pkglist-stats">
+		<p>1 exact match found.</p>
+	</div>
+	<table class="results">
+		<thead>
+			<tr>
+				<th>Arch</th>
+				<th>Repo</th>
+				<th>Name</th>
+				<th>Version</th>
+				<th>Description</th>
+				<th>Last Updated</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody id="tbody_exacts">
+		</tbody>
+	</table>
+</div>
+
 <div id="pkglist-results" class="box">
 	<div class="pkglist-stats">
-
-		<p>13923 matching packages found.
-		Page 1 of 140.</p>
-
+		<p class="p_count">9999 matching packages found. Page 1 of 99.</p>
 		<div class="pkglist-nav">
 			<span class="prev">
-
 				&lt; Prev
-
 			</span>
 			<span class="next">
-
-				<a href="?page=2&amp;"
-					 title="Go to next page" rel="next">Next &gt;</a>
-
+				Next &gt;
 			</span>
 		</div>
-
 	</div>
 
-
-	<form id="pkglist-results-form" method="post" action="/packages/update/"><input type="hidden" name="csrfmiddlewaretoken" value="LnRLOMzX1yfqcTQidAJ3NHJnVKhn2WvEupOZcbMCK7nOls51xFIm3pGe23inQX1F">
+	<form id="pkglist-results-form" method="post" action="/packages/update/">
+		<input type="hidden" name="csrfmiddlewaretoken" value="LnRLOMzX1yfqcTQidAJ3NHJnVKhn2WvEupOZcbMCK7nOls51xFIm3pGe23inQX1F">
 		<table class="results">
 			<thead>
 				<tr>
-
-					<th><a href="/packages/?sort=arch"
+					<th><a id="a_sort_arch" href="#"
 								 title="Sort packages by architecture">Arch</a></th>
-					<th><a href="/packages/?sort=repo"
+					<th><a id="a_sort_repo" href="#"
 								 title="Sort packages by repository">Repo</a></th>
-					<th><a href="/packages/?sort=pkgname"
+					<th><a id="a_sort_pkgname" href="#"
 								 title="Sort packages by package name">Name</a></th>
 					<th>Version</th>
 					<th>Description</th>
-					<th><a href="/packages/?sort=-last_update"
+					<th><a id="a_sort_lastupdate" href="#"
 								 title="Sort packages by last update">Last Updated</a></th>
-					<th>Download</th>
-					<th>Source</th>
+					<th></th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>loong64</td>
-					<td>Extra</td>
-					<td><a href="/packages/extra/x86_64/0ad/" title="View package details for 0ad">0ad</a></td>
-
-					<td>a26-7</td>
-
-					<td class="wrap">Cross-platform, 3D and historically-based real-time strategy game</td>
-					<td>2023-05-19</td>
-					<td></td>
-					<td></td>
-				</tr>
+			<tbody id="tbody_results">
 			</tbody>
 		</table>
 		<div class="pkglist-stats">
-
-			<p>13923 matching packages found.
-			Page 1 of 140.</p>
-
+			<p class="p_count">9999 matching packages found. Page 1 of 99.</p>
 			<div class="pkglist-nav">
 				<span class="prev">
-
 					&lt; Prev
-
 				</span>
 				<span class="next">
-
-					<a href="?page=2&amp;"
-						 title="Go to next page" rel="next">Next &gt;</a>
-
+					Next &gt;
 				</span>
 			</div>
-
 		</div>
 	</form>
 </div>
+<script>
+	$("#a_sort_arch").click(function(e) { doSort("arch"); });
+	$("#a_sort_repo").on("click", function() { doSort("repo"); });
+	$("#a_sort_pkgname").on("click", function() { doSort("pkgname"); });
+	$("#a_sort_lastupdate").on("click", function() { doSort("last_update"); });
+	$(document).ready(function() {
+		updateResults();
+	});
+</script>
