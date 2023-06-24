@@ -57,7 +57,7 @@
 		}
 
 		function updateResults(query=window.location.search) {
-			var baseurl = "http://10.10.10.50:8080/api/v1"
+			var baseurl = "https://archapi.zhcn.cc/api/v1"
 			var url = baseurl + "/packages/" + query;
 			$.ajax({
 				url: url,
