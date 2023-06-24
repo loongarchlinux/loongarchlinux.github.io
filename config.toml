@@ -38,7 +38,7 @@ unsafe= true
 
 [[menu.main]]
   Name = "软件包"
-  URL = "/pages/packages/"
+  URL = "/packages/"
   Title = "Loong Arch Linux 软件包数据库"
   weight = -6
 
