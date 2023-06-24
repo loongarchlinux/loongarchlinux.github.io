@@ -3,8 +3,8 @@ languageCode = "zh-cn"
 title = "Loong Arch Linux"
 #theme = "arch"
 theme = "loongarchlinux"
-description = "一个极快、响应式和功能丰富的 Hugo 博客主题"
-copyright = "Copyright © {year} Community Team. All Rights Reserved."
+description = "LoongArch ArchLinux"
+copyright = "Copyright © 2022-{year} Community Team. All Rights Reserved."
 
 dateFormat = "2006年01月02日"
 
