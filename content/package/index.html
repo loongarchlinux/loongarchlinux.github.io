@@ -28,7 +28,7 @@ type = "package"
                     title="Browse packages for loong64 architecture">loong64</a></td>
         </tr><tr>
             <th>Repository:</th>
-            <td><a id="a_repo" href="/packages/?repo=Core"
+            <td><a id="a_repo" href="/packages/?repo=core"
                     title="Browse the Core repository">Core</a></td>
         </tr>
 
@@ -226,7 +226,7 @@ type = "package"
 				$('#a_git_log').attr("href", "https://github.com/loongarchlinux/"+result.repo.replace("-testing", "")+"/commits/main/" + result.pkgbase).attr("title", "View changes for " + result.pkgname);
 				$('#a_download').attr("href", baseurl + "/" + result.repo + "/" + result.arch + "/" + result.pkgname + "/download/").attr("title", "Download " + result.pkgname + "from mirror");
 				$('#a_arch').html(result.arch).attr("href", "/packages/?arch="+result.arch).attr("title", "Browse packages for " + result.arch + " architecture");
-				$('#a_repo').html(result.repo).attr("href", "/packages/?repo="+result.arch).attr("title", "Browse the " + result.repo + "repository");
+				$('#a_repo').html(result.repo).attr("href", "/packages/?repo="+result.repo).attr("title", "Browse the " + result.repo + "repository");
 				$('#description').html(result.pkgdesc);
 				$('#a_url').html(result.url).attr("href", result.url).attr("title", "Visit the website for "+result.pkgname);
 				$('#td_license').html(result.licenses.join(","));
