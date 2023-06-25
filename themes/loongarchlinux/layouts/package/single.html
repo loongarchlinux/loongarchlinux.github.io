@@ -112,7 +112,7 @@
 			let packager_array = result.packager.split('<');
 			let user = packager_array[0].replace(/(\s*$)/g,"");
 			let email = packager_array[1].replace(">", "").replace(/(\s*$)/g,"");
-			$('#a_packager').html(user).attr("href", "mailto:"+email).attr("title", "Send email to " + user);
+			$('#td_packager').html(user);
 		}
 
 		function showdeps(result) {
