@@ -8,9 +8,9 @@ draft = false
 
 安装镜像可以刻录到光盘、挂载为 ISO 文件或直接写入优盘。它仅适用于从新安装；现有的 Arch Linux 系统始终可以用 `pacman -Syu` 进行更新。
 
-- 最新版本：2023.05.08
-- 内核版本：6.3.0
-- ISO 大小：590 MB
+- 最新版本：<div id="version" style="display:inline">2023.05.08</div>
+- 内核版本：<div id="kernel" style="display:inline">6.3.0</div>
+- ISO 大小：<div id="size" style="display:inline">590 MB</div>
 - [安装指南](/pages/install/)
 
 ## 现有用户
@@ -28,7 +28,7 @@ draft = false
 Github Packages 提供了官方 Docker 镜像，您可以使用以下命令获取：
 
 ```
-docker pull ghcr.io/loongarchlinux/archlinux:latest
+$ docker pull ghcr.io/loongarchlinux/archlinux:latest
 ```
 
 ## 虚拟机镜像
@@ -40,14 +40,54 @@ docker pull ghcr.io/loongarchlinux/archlinux:latest
 - [https://mirrors.nju.edu.cn](https://mirrors.nju.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.iscas.ac.cn](https://mirrors.iscas.ac.cn/loongarch/archlinux/images/)
 
-
 ## HTTP 直接下载
 
 您可从以下镜像仓库下载iso：
 
-- [https://mirrors.wsyu.edu.cn](https://mirrors.wsyu.edu.cn/loongarch/archlinux/iso/latest/)
-- [https://mirrors.pku.edu.cn](https://mirrors.pku.edu.cn/loongarch/archlinux/iso/latest/)
-- [https://mirrors.nju.edu.cn](https://mirrors.nju.edu.cn/loongarch/archlinux/iso/latest/)
-- [https://mirrors.iscas.ac.cn](https://mirrors.iscas.ac.cn/loongarch/archlinux/iso/latest/)
+<div>
+<ul id="ul_download">
+</ul>
+</div>
 
 如果您为 Loong Arch Linux 提供了仓库镜像，请联系我们将其添加到这个列表中。
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    function getfilesize(size) {
+        if (!size)
+            return "";
+
+        var num = 1024.00;
+
+        if (size < num)
+            return size + "B";
+        if (size < Math.pow(num, 2))
+            return (size / num).toFixed(2) + "K";
+        if (size < Math.pow(num, 3))
+            return (size / Math.pow(num, 2)).toFixed(2) + "M";
+        if (size < Math.pow(num, 4))
+            return (size / Math.pow(num, 3)).toFixed(2) + "G";
+        return (size / Math.pow(num, 4)).toFixed(2) + "T";
+    }
+	$(document).ready(function() {
+		var baseurl = "https://archapi.zhcn.cc/api/v1";
+		var url = baseurl + "/version/";
+		$.ajax({
+			url: url,
+			dataType: "json",
+			success:function(result) {
+                $('#version').text(result.version);
+                $('#kernel').text(result.kernel);
+                $('#size').text(getfilesize(result.size));
+                for(var i=0; i<result.mirrors.length; i++) {
+                    let mirror = result.mirrors[i];
+                    let uri = new URL(mirror);
+                    let url = uri.protocol + "//" + uri.host;
+                    let file = mirror + "/iso/" + result.version + "/" + result.iso_file;
+                    $li_url = $("<li><a href=\""+ file + "\" target=\"_blank\">"+ url +"</a></li>");
+                    $("#ul_download").append($li_url);
+                }
+			}
+		});
+	});
+</script>
