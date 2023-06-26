@@ -41,7 +41,7 @@ qemu-system-loongarch64 \
 
 注：
 
-- `QEMU_EFI_7.2.fd` 文件为虚拟机固件，请点击[这里](https://mirrors.pku.edu.cn/loongarch/archlinux/images/QEMU_EFI_7.2.fd)下载，或者从 [edk2-loongarch64](/packages/extra/any/edk2-loongarch64/) 软件包中解压。
+- `QEMU_EFI_7.2.fd` 文件为虚拟机固件，请点击[这里](https://mirrors.pku.edu.cn/loongarch/archlinux/images/QEMU_EFI_7.2.fd)下载，或者从 [edk2-loongarch64](/package/?repo=extra&arch=any&name=edk2-loongarch64) 软件包中解压。
 
 ## 虚拟机中的帐号
 
