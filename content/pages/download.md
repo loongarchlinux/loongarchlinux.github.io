@@ -17,6 +17,19 @@ draft = false
 
 如果您已经是 Loong Arch Linux 用户，则无需下载新的 ISO 来更新现有系统。您可能正在寻找更新的[镜像列表](/pages/mirrorlist/)。
 
+## BitTorrent 下载（推荐）
+
+如果您愿意，请在下载完成后保持客户端打开状态，以便您可以将其种子重新播种给其他人。
+
+**需要支持 DHT 的客户端。** 建议使用支持 WebSeed 的客户端以获得最快的下载速度。
+
+<ul>
+    <li><img width="12" height="12" src="/images/magnet.png" alt=""/>
+    磁力链接：<a id="a_magnet" href="#" title="打开磁力链接">2023.05.08 </a></li>
+    <li><img width="12" height="12" src="/images/download.png" alt=""/>
+    种子文件：<a id="a_torrent" href="#" title="下载种子文件">2023.05.08</a></li>
+</ul>
+
 ## 网络引导
 
 如果您有有线连接，则可以直接通过网络启动最新版本。
@@ -79,6 +92,10 @@ $ docker pull ghcr.io/loongarchlinux/archlinux:latest
                 $('#version').text(result.version);
                 $('#kernel').text(result.kernel);
                 $('#size').text(getfilesize(result.size));
+                $("#a_torrent").attr("href", "https://mirrors.wsyu.edu.cn/loongarch/archlinux/iso/latest/" + result.iso_file + ".torrent")
+                .html(result.version);
+                $("#a_magnet").attr("href", "magnet:?xt=urn:btih:" + result.bthash +"&dn="+ result.iso_file)
+                .html(result.version);
                 for(var i=0; i<result.mirrors.length; i++) {
                     let mirror = result.mirrors[i];
                     let uri = new URL(mirror);
