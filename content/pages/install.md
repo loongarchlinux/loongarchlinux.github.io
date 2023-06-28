@@ -172,7 +172,7 @@ pacman-key --init
 pacman-key --populate archlinux
 ```
 
-2. `archinstall` 时会测试镜像连接
+2. 如何关闭 `archinstall` 测试镜像连接？
 
 运行 `archinstall` 时，会长时间显示如下内容：
 ```
