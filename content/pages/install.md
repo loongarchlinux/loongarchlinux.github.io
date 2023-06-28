@@ -150,3 +150,33 @@ export XMODIFIERS="@im=fcitx"
 EOF
 # chmod +x /etc/X11/xinit/xinitrc.d/50-input.sh
 ```
+
+## 常见问题
+
+1. 签名无效
+
+进入archlinux 安装环境之后，运行 `pacman -Sy` 命令，遇到如下错误：
+```
+错误：core: 来自 "65D4986C7904C6DBF2C4DD9A4E4E02B70BA5C468" 的签名是未知信任的
+错误：extra: 密钥 "65D4986C7904C6DBF2C4DD9A4E4E02B70BA5C468" 未知
+错误：密钥环不可写
+错误：未能同步所有数据库（无效或已损坏的数据库（PGP 签名))
+```
+
+从iso启动之后，会自动运行 `pacman-key` 来初始化签名数据库，您可以重启系统，并等待后台 `pacman-key` 进程结束即可。
+
+或者，在不重启系统的情况下，分别运行以下命令，重建本地签名数据库即可恢复正常：
+
+```
+pacman-key --init
+pacman-key --populate archlinux
+```
+
+2. `archinstall` 时会测试镜像连接
+
+运行 `archinstall` 时，会长时间显示如下内容：
+```
+Testing connectivity to the Arch Linux mirrors ...
+```
+
+请耐心等待其结束，或者使用 `archinstall --skip-mirror-check` 命令重新运行。
