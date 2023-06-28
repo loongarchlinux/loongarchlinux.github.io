@@ -29,7 +29,7 @@ qemu-system-loongarch64 \
     -cpu la464-loongarch-cpu \
     -machine virt \
     -smp 4 \
-    -bios ./QEMU_EFI_7.2.fd \
+    -bios ./QEMU_EFI_x.y.fd \
     -serial stdio \
     -device virtio-gpu-pci \
     -net nic -net user \
@@ -41,7 +41,8 @@ qemu-system-loongarch64 \
 
 注：
 
-- `QEMU_EFI_7.2.fd` 文件为虚拟机固件，请点击[这里](https://mirrors.pku.edu.cn/loongarch/archlinux/images/QEMU_EFI_7.2.fd)下载，或者从 [edk2-loongarch64](/package/?repo=extra&arch=any&name=edk2-loongarch64) 软件包中解压。
+- `QEMU_EFI_x.y.fd`: 虚拟机固件文件，请选择 QEMU 的对应版本下载，[QEMU_EFI_7.2.fd](https://mirrors.pku.edu.cn/loongarch/archlinux/images/QEMU_EFI_7.2.fd)、[QEMU_EFI_8.0.fd](https://mirrors.pku.edu.cn/loongarch/archlinux/images/QEMU_EFI_8.0.fd)。或者从 [edk2-loongarch64](/package/?repo=extra&arch=any&name=edk2-loongarch64) 软件包中解压适用于此[QEMU](/package/?repo=extra&arch=loong64&name=qemu-system-loongarch64)版本的固件文件。
+
 
 ## 虚拟机中的帐号
 
