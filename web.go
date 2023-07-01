@@ -66,36 +66,68 @@ func MirrorList(c *gin.Context) {
 	if !ok {
 		fmt.Printf("%#v\n", al.db)
 	}
+
 	if strings.Index(c.GetHeader("Accept"), "json") > 0 {
 		c.JSON(http.StatusOK, al.cfg.Mirrors)
-	} else {
-		txt_tmpl := `##
+		return
+	}
+
+	mirror_status := c.Query("use_mirror_status")
+	txt_tmpl := `##
 ## Arch Linux repository mirrorlist
+{{- if .Status }}
 ## Filtered by mirror score from mirror status page
+{{- end }}
 ## Generated on {{ .Created.Format "2006-01-02" }}
 ##
 
-{{ range .Mirrors }}
-## China
-#Server = {{ . }}/$repo/os/$arch
+{{ $status := .Status }}
+{{- range $key,$value := .Mirrors }}
+{{- if $status }}
+## {{ .Region }}
+{{- else }}
+{{- if (eq $key 0) }}
+## {{ .Region }}
+{{- end }}
+{{- end }}
+#Server = {{ .URL }}/$repo/os/$arch
 {{- end }}
 `
-		type MirrorList struct {
-			Created time.Time
-			Mirrors []string
-		}
-		buf := new(strings.Builder)
-		t, err := template.New("mirror_tmpl").Parse(txt_tmpl)
-		if err != nil {
-			c.String(http.StatusNotFound, "404 page not found")
-			return
-		}
-		p := MirrorList{
-			Created: time.Now(),
-			Mirrors: al.cfg.Mirrors}
-		t.Execute(buf, p)
-		c.String(http.StatusOK, buf.String())
+	type Mirror struct {
+		Region string
+		URL    string
 	}
+
+	type MirrorList struct {
+		Created time.Time
+		Mirrors []Mirror
+		Status  bool
+	}
+
+	tmpl, err := template.New("mirror_tmpl").Parse(txt_tmpl)
+	if err != nil {
+		c.String(http.StatusNotFound, "404 page not found")
+		return
+	}
+
+	var ml []Mirror
+
+	for _, l := range al.cfg.Mirrors {
+		m := Mirror{
+			Region: "China",
+			URL:    l,
+		}
+		ml = append(ml, m)
+	}
+
+	mlist := MirrorList{Created: time.Now(), Mirrors: ml}
+	if mirror_status != "" {
+		mlist.Status = true
+	}
+
+	buf := new(strings.Builder)
+	tmpl.Execute(buf, mlist)
+	c.String(http.StatusOK, buf.String())
 }
 
 func Version(c *gin.Context) {
@@ -402,7 +434,7 @@ func (al *ArchLoong) WebServer() {
 
 	v1 := al.route.Group("/api/v1")
 	{
-		v1.GET("/mirrors/", MirrorList)
+		v1.GET("/mirrorlist/", MirrorList)
 		v1.GET("/version/", Version)
 		v1.GET("/packages/", PackageList)
 		v1.GET("/package/", OnePackage)
