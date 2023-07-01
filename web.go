@@ -8,6 +8,8 @@ import (
 	"strings"
 	"time"
 
+	"text/template"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"gopkg.in/yaml.v3"
@@ -64,7 +66,36 @@ func MirrorList(c *gin.Context) {
 	if !ok {
 		fmt.Printf("%#v\n", al.db)
 	}
-	c.JSON(http.StatusOK, al.cfg.Mirrors)
+	if strings.Index(c.GetHeader("Accept"), "json") > 0 {
+		c.JSON(http.StatusOK, al.cfg.Mirrors)
+	} else {
+		txt_tmpl := `##
+## Arch Linux repository mirrorlist
+## Filtered by mirror score from mirror status page
+## Generated on {{ .Created.Format "2006-01-02" }}
+##
+
+{{ range .Mirrors }}
+## China
+#Server = {{ . }}/$repo/os/$arch
+{{- end }}
+`
+		type MirrorList struct {
+			Created time.Time
+			Mirrors []string
+		}
+		buf := new(strings.Builder)
+		t, err := template.New("mirror_tmpl").Parse(txt_tmpl)
+		if err != nil {
+			c.String(http.StatusNotFound, "404 page not found")
+			return
+		}
+		p := MirrorList{
+			Created: time.Now(),
+			Mirrors: al.cfg.Mirrors}
+		t.Execute(buf, p)
+		c.String(http.StatusOK, buf.String())
+	}
 }
 
 func Version(c *gin.Context) {
