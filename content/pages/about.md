@@ -41,3 +41,5 @@ Loong Arch Linux 表示 LoongArch ArchLinux，将重复的 Arch 部分去掉，�
 - 2023年04月10日，新增 Loong Arch Linux 的`Docker` 镜像。
 - 2023年06月03日，开始合并 [community] 到 [extra] 仓库，开始清理旧的iso、旧的2022.03仓库、旧的qemu qcow2镜像等。
 - 2023年06月07日，完成旧iso、2022.03仓库、qemu qcow2镜像的清理，完成 git 仓库 [community] 到 [extra] 合并， [community] git 仓库已归档，优化开发流程，git 仓库可接受 PR 贡献。
+- 2023年06月14日，从20230614版本开始，新增磁力链iso下载方式。
+- 2023年06月26日，[网站](https://loongarchlinux.org) 完工，正式上线。
