@@ -13,8 +13,13 @@ type = "package"
         <h4>Package Actions</h4>
             <ul class="small">
                 <li>
-                    <a id="a_git_src" href="https://gitlab.archlinux.org/archlinux/packaging/packages/" target="_blank" title="View source files for">Source Files</a> /
-                    <a id="a_git_log" href="https://gitlab.archlinux.org/archlinux/packaging/packages/" target="_blank" title="View changes for ">View Changes</a>
+                    <a id="a_git_src" href="https://github.com/loongarchlinux/extra/" target="_blank" title="View source files">Source Files</a> /
+                    <a id="a_git_log" href="https://github.com/loongarchlinux/extra/commits/main" target="_blank" title="View changes">View Changes</a>
+                </li>
+                <li>
+                    <a id="a_wiki" href="https://wiki.archlinux.org/title/Special:Search?search=" title="Search wiki">Search Wiki</a> /
+                    <a id="a_wiki_cn" href="https://wiki.archlinux.org/title/Special:Search?search=" title="Search wiki">维基搜索</a> /
+                    <a id="a_man" href="https://man.archlinux.org/listing/" title="List manpages">Manual Pages</a>
                 </li>
                 <li><a id="a_download" href="download/" rel="nofollow" title="Download from mirror">Download From Mirror</a></li>
             </ul>
@@ -100,6 +105,9 @@ type = "package"
 				$('#h2_namever').html(result.pkgname + " " + result.pkgver).removeAttr('class');
 				$('#a_git_src').attr("href", "https://github.com/loongarchlinux/"+result.repo.replace("-testing", "")+"/tree/main/" + result.pkgbase).attr("title", "View source files for " + result.pkgname);
 				$('#a_git_log').attr("href", "https://github.com/loongarchlinux/"+result.repo.replace("-testing", "")+"/commits/main/" + result.pkgbase).attr("title", "View changes for " + result.pkgname);
+				$('#a_wiki').attr("href", "https://wiki.archlinux.org/title/Special:Search?search=" + result.pkgname).attr("title", "Search wiki for " + result.pkgname);
+				$('#a_wiki_cn').attr("href", "https://wiki.archlinuxcn.org/title/Special:Search?search=" + result.pkgname).attr("title", "Search wiki for " + result.pkgname);
+				$('#a_man').attr("href", "https://man.archlinux.org/listing/" + result.pkgname).attr("title", "List manpages in " + result.pkgname);
 				$('#a_download').attr("href", baseurl + "/" + result.repo + "/" + result.arch + "/" + result.pkgname + "/download/").attr("title", "Download " + result.pkgname + "from mirror");
 				$('#a_arch').html(result.arch).attr("href", "/packages/?arch="+result.arch).attr("title", "Browse packages for " + result.arch + " architecture");
 				$('#a_repo').html(result.repo).attr("href", "/packages/?repo="+result.repo).attr("title", "Browse the " + result.repo + "repository");
