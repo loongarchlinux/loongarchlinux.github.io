@@ -23,7 +23,7 @@ Loong Arch Linux 表示 LoongArch ArchLinux，将重复的 Arch 部分去掉，�
 
 ## Loong Arch Linux 历史
 
-- 2021年06月19日，发布 [Alpha](http://archlinux.oukan.online/alpha/index.html) 版本，提供 bootstrap 镜像，带 [core]、[extra]、[community] 和 [aur] 软件包仓库。
+- 2021年06月19日，发布 [2021.07](http://archlinux.oukan.online/alpha/index.html) Alpha版本，提供 bootstrap 镜像，带 [core]、[extra]、[community] 和 [aur] 软件包仓库。
 - 2022年05月13日，发布 [2022.03](https://bbs.loongarch.org/d/67-loongarchlinux-202203) Beta1版本，提供 iso 镜像，支持 `xfce`、`mate` 桌面环境，带 [core]、[extra]、[community] 及 [aur] 软件包仓库。
 - 2022年09月29日，发布 [2022.09](https://bbs.loongarch.org/d/126-archlinux-loong64-202209) Beta2版本, 提供 iso 镜像，增加 `lxde`、`lxqt` 等桌面环境，带 [core]、[extra]、[community] 及 [aur] 软件包仓库。发行版架构名称采用 loong64。
 - 2022年10月21日，首次启用[testing仓库](https://bbs.loongarch.org/d/126-archlinux-loong64-202209/40)，从现在开始，LoongArch 上游社区 ABI 趋于稳定，开始采用滚动升级模式，用户不再需要使用 iso 重新安装系统。
@@ -44,3 +44,4 @@ Loong Arch Linux 表示 LoongArch ArchLinux，将重复的 Arch 部分去掉，�
 - 2023年06月14日，从20230614版本开始，新增磁力链iso下载方式。
 - 2023年06月26日，[网站](https://loongarchlinux.org) 完工，正式上线。
 - 2023年07月07日，仓库新增 DDE 和 UKUI 桌面环境。
+- 2023年07月17日，宣布结束 Beta 状态，正式支持龙架构, 发布 2023.07 首个正式版本iso。
