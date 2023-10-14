@@ -142,13 +142,14 @@ func Version(c *gin.Context) {
 	}()
 
 	type Release struct {
-		Version string   `yaml:"version" json:"version"`
-		IsoFile string   `yaml:"isofile" json:"iso_file"`
-		TarFile string   `yaml:"tarfile" json:"tar_file"`
-		Kernel  string   `yaml:"kernel" json:"kernel"`
-		Size    int      `yaml:"size" json:"size"`
-		BtHash  string   `yaml:"bthash" json:"bthash"`
-		Mirrors []string `json:"mirrors"`
+		Version    string   `yaml:"version" json:"version"`
+		IsoFile    string   `yaml:"isofile" json:"iso_file"`
+		LivecdFile string   `yaml:"livefile" json:"livecd_file"`
+		TarFile    string   `yaml:"tarfile" json:"tar_file"`
+		Kernel     string   `yaml:"kernel" json:"kernel"`
+		Size       int      `yaml:"size" json:"size"`
+		BtHash     string   `yaml:"bthash" json:"bthash"`
+		Mirrors    []string `json:"mirrors"`
 	}
 	var release *Release
 
