@@ -17,7 +17,18 @@ draft = false
 
 如果您已经是 Loong Arch Linux 用户，则无需下载新的 ISO 来更新现有系统。您可能正在寻找更新的[镜像列表](/pages/mirrorlist/)。
 
-## BitTorrent 下载（推荐）
+## HTTP 直接下载(推荐)
+
+您可从以下镜像仓库下载iso：
+
+<div>
+<ul id="ul_download">
+</ul>
+</div>
+
+如果您为 Loong Arch Linux 提供了仓库镜像，请联系我们将其添加到这个列表中。
+
+## BitTorrent 下载
 
 如果您愿意，请在下载完成后保持客户端打开状态，以便您可以将其种子重新播种给其他人。
 
@@ -52,17 +63,6 @@ $ docker pull ghcr.io/loongarchlinux/archlinux:latest
 - [https://mirrors.pku.edu.cn](https://mirrors.pku.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.nju.edu.cn](https://mirrors.nju.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.iscas.ac.cn](https://mirrors.iscas.ac.cn/loongarch/archlinux/images/)
-
-## HTTP 直接下载
-
-您可从以下镜像仓库下载iso：
-
-<div>
-<ul id="ul_download">
-</ul>
-</div>
-
-如果您为 Loong Arch Linux 提供了仓库镜像，请联系我们将其添加到这个列表中。
 
 <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
@@ -100,8 +100,9 @@ $ docker pull ghcr.io/loongarchlinux/archlinux:latest
                     let mirror = result.mirrors[i];
                     let uri = new URL(mirror);
                     let url = uri.protocol + "//" + uri.host;
-                    let file = mirror + "/iso/" + result.version + "/" + result.iso_file;
-                    $li_url = $("<li><a href=\""+ file + "\" target=\"_blank\">"+ url +"</a></li>");
+                    let iso_file = mirror + "/iso/" + result.version + "/" + result.iso_file;
+                    let livecd_file = mirror + "/iso/" + result.version + "/" + result.livecd_file;
+                    $li_url = $("<li><a href='"+ mirror + "/iso/latest/' target='_blank'>"+ url +"</a>&nbsp;&nbsp;<a href='"+ iso_file +"' target='_blank'><img width='12' height='12' src='/images/download.png' alt=''/>ISO</a>&nbsp;&nbsp;<a href='" + livecd_file + "' target='_blank'><img width='12' height='12' src='/images/download.png' alt=''/>LiveCD</a></li>");
                     $("#ul_download").append($li_url);
                 }
 			}
