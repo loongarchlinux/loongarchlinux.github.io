@@ -45,3 +45,4 @@ Loong Arch Linux 表示 LoongArch ArchLinux，将重复的 Arch 部分去掉，�
 - 2023年06月26日，[网站](https://loongarchlinux.org) 完工，正式上线。
 - 2023年07月07日，仓库新增 DDE 和 UKUI 桌面环境。
 - 2023年07月17日，宣布结束 Beta 状态，正式支持龙架构, 发布 2023.07 首个正式版本iso。
+- 2023年10月10日，从20231010版本开始，新增带图形界面安装的 LiveCD 镜像。
