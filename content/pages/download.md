@@ -64,7 +64,7 @@ $ docker pull ghcr.io/loongarchlinux/archlinux:latest
 - [https://mirrors.nju.edu.cn](https://mirrors.nju.edu.cn/loongarch/archlinux/images/)
 - [https://mirrors.iscas.ac.cn](https://mirrors.iscas.ac.cn/loongarch/archlinux/images/)
 
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.6.4.min.js"></script>
 <script>
     function getfilesize(size) {
         if (!size)
