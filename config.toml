@@ -9,7 +9,7 @@ copyright = "Copyright © 2022-{year} Community Team. All Rights Reserved."
 dateFormat = "2006年01月02日"
 
 hasCJKLanguage = true
-paginate = 5
+pagination.pagerSize = 5
 lang="zh-cn"
 
 [archive]
