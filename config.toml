@@ -73,10 +73,28 @@ unsafe= true
   weight = 1
 
 [[menu.sidebar_develop]]
+  Name = "补丁集仓库"
+  URL = "https://github.com/lcpu-club/loongarch-packages"
+  Title = "软件包补丁集"
+  weight = 2
+
+[[menu.sidebar_develop]]
+  Name = "软件包状态"
+  URL = "https://loongarchlinux.lcpu.dev/status"
+  Title = "软件包开发状态查询"
+  weight = 3
+
+[[menu.sidebar_develop]]
+  Name = "软件包统计"
+  URL = "https://loongarchlinux.lcpu.dev/stat"
+  Title = "发行版软件包完成度对比统计"
+  weight = 4
+
+[[menu.sidebar_develop]]
   Name = "开发者论坛"
   URL = "https://github.com/orgs/loongarchlinux/discussions"
   Title = "Loong Arch Linux 开发者论坛"
-  weight = 2
+  weight = 5
 
 [[menu.sidebar_resource]]
   Name = "Great Loongson Union"
@@ -95,3 +113,21 @@ unsafe= true
   URL = "https://loongarch.dev"
   Title = "LoongArch 开放社区"
   weight = 3
+
+[[menu.sidebar_resource]]
+  Name = "LA UOSC"
+  URL = "https://bbs.loongarch.org"
+  Title = "LA UOSC社区"
+  weight = 4
+
+[[menu.sidebar_resource]]
+  Name = "龙芯爱好者社区"
+  URL = "https://www.loongbbs.cn"
+  Title = "龙芯爱好者社区"
+  weight = 5
+
+[[menu.sidebar_resource]]
+  Name = "咱龙了吗？"
+  URL = "https://areweloongyet.com"
+  Title = "咱龙了吗？"
+  weight = 6
