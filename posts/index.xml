@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Loong Arch Linux</title><link>https://loongarchlinux.org/posts/</link><description>Recent content in Posts on Loong Arch Linux</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><copyright>Copyright © 2022-{year} Community Team. All Rights Reserved.</copyright><lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0800</lastBuildDate><atom:link href="https://loongarchlinux.org/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>新年新起点，迈入社区维护新阶段</title><link>https://loongarchlinux.org/posts/new-team/</link><pubDate>Wed, 01 Jan 2025 00:00:00 +0800</pubDate><guid>https://loongarchlinux.org/posts/new-team/</guid><description>&lt;p>自 2024 年以来，龙架构开源软件生态持续成熟，仓库中有越来越多的软件包可用，伴随而来的问题是，每次更新系统，要下载、编译的包数量庞大，同时个人工作繁忙，无法保证维护投入（实际已远低于 0.5 人），所以 2024 年采用按季度进行更新。&lt;/p></description></item><item><title>Loong Arch Linux 正式支持龙架构</title><link>https://loongarchlinux.org/posts/official-support-loongarch/</link><pubDate>Mon, 17 Jul 2023 15:46:57 +0800</pubDate><guid>https://loongarchlinux.org/posts/official-support-loongarch/</guid><description>&lt;p>基于以下事实:&lt;/p>
+&lt;ul>
+&lt;li>从 2022.09 beta2版本开始，Loong Arch Linux 采用“滚动升级”策略以来，已经过去了三个季度，且滚动升级期间，未发生重大问题。&lt;/li>
+&lt;li>上个月，我们建立了官方网站，并正式上线。&lt;/li>
+&lt;li>软件仓库移植了包括Gnome、KDE、Mate、XFCE、LXDE、Cinnamon、DDE、UKUI在内的众多桌面环境及大量开源软件，并支持用户直接安装 AUR 软件，可以满足各类用户的不同使用需求。&lt;/li>
+&lt;/ul>
+&lt;p>我们自豪地宣布 Loong Arch Linux 结束 Beta 状态，正式支持龙架构，2023.07 是首个正式版本的iso。&lt;/p></description></item><item><title>TeX Live 打包改变了组织结构</title><link>https://loongarchlinux.org/posts/tex-live-package-reorganization/</link><pubDate>Fri, 30 Jun 2023 14:12:29 +0800</pubDate><guid>https://loongarchlinux.org/posts/tex-live-package-reorganization/</guid><description>&lt;p>从版本 2023.66594-5 开始，TeX Live 的打包改变了组织结构，更接近上游的集合(collections)。尽管新的 texlive-basic 包替换了 texlive-core 包，很多原本属于 texlive-core 包的内容（包括一些特定语种的文件）现在被拆分到了别的包中去。如果想了解哪个 Arch 软件包中提供了特定 CTAN 宏包，可以使用 tlmgr 工具，比如:&lt;/p></description></item><item><title>软件包仓库合并</title><link>https://loongarchlinux.org/posts/repo-merge/</link><pubDate>Tue, 13 Jun 2023 20:13:29 +0800</pubDate><guid>https://loongarchlinux.org/posts/repo-merge/</guid><description>&lt;p>Loong Arch Linux 仓库合并工作已完成。&lt;/p>
+&lt;h2 id="git-仓库">GIT 仓库&lt;/h2>
+&lt;p>Loong Arch Linux 完成了&lt;a href="https://github.com/loongarchlinux/community" target="_blank">community&lt;/a>
+仓库内容到 &lt;a href="https://github.com/loongarchlinux/extra" target="_blank">extra&lt;/a>
+仓库合并，同时 &lt;a href="https://github.com/loongarchlinux/community" target="_blank">community&lt;/a>
+仓库已经归档，不再接受 PR。&lt;/p>
+&lt;h2 id="二进制软件包仓库">二进制软件包仓库&lt;/h2>
+&lt;p>合并：[community] 仓库合并到 [extra]。&lt;/p>
+&lt;p>新增：[core-testing]、[extra-testing] 及 [laur-testing] 仓库。&lt;/p></description></item><item><title>git 仓库合并</title><link>https://loongarchlinux.org/posts/git-merge/</link><pubDate>Sat, 03 Jun 2023 19:32:06 +0800</pubDate><guid>https://loongarchlinux.org/posts/git-merge/</guid><description>&lt;p>ArchLinux(x86_64) 于2023年05月19日开始，将源码仓库从 SVN 迁移到了 GIT 上，并且完成了仓库拆分与合并。&lt;/p>
+&lt;p>拆分：[testing] 仓库将拆分为 [core-testing] 和 [extra-testing] ， [staging] 仓库将拆分为 [core-staging] 和 [extra-staging] 。&lt;/p></description></item><item><title>新增 Docker 镜像</title><link>https://loongarchlinux.org/posts/docker-image/</link><pubDate>Mon, 10 Apr 2023 22:03:09 +0800</pubDate><guid>https://loongarchlinux.org/posts/docker-image/</guid><description>&lt;p>&lt;a href="https://github.com/orgs/loongarchlinux/packages" target="_blank">Github Packages&lt;/a>
+提供了发布 Docker 镜像的功能，我们现在为 Loong Arch Linux 提供了 Docker 镜像。&lt;/p>
+&lt;p>您可以使用以下命令获取：&lt;/p>
+&lt;pre tabindex="0">&lt;code>docker pull ghcr.io/loongarchlinux/archlinux:latest
+&lt;/code>&lt;/pre></description></item><item><title>仓库路径变更及aur仓库改名</title><link>https://loongarchlinux.org/posts/remove-repo-aur/</link><pubDate>Wed, 15 Mar 2023 21:42:18 +0800</pubDate><guid>https://loongarchlinux.org/posts/remove-repo-aur/</guid><description>&lt;p>经过一段时间的过渡，今天正式完成仓库变更。&lt;/p>
+&lt;ol>
+&lt;li>删除 &lt;code>2022.09&lt;/code> 仓库路径&lt;/li>
+&lt;/ol>
+&lt;p>请修改 &lt;code>/etc/pacman.d/mirrorlist&lt;/code> 文件中的仓库地址，将以下内容&lt;/p>
+&lt;pre tabindex="0">&lt;code>Server = https://mirrors.wsyu.edu.cn/loongarch/2022.09/$repo/os/$arch
+&lt;/code>&lt;/pre>&lt;p>修改为：&lt;/p>
+&lt;pre tabindex="0">&lt;code>Server = https://mirrors.wsyu.edu.cn/loongarch/archlinux/$repo/os/$arch
+&lt;/code>&lt;/pre>&lt;ol start="2">
+&lt;li>删除 [aur] 软件包仓库&lt;/li>
+&lt;/ol>
+&lt;p>由于 [aur] 仓库已经改名为 [laur]，请将 &lt;code>/etc/pacman.conf&lt;/code> 文件中的以下内容&lt;/p></description></item><item><title>网络启动</title><link>https://loongarchlinux.org/posts/netboot/</link><pubDate>Fri, 24 Feb 2023 19:34:24 +0800</pubDate><guid>https://loongarchlinux.org/posts/netboot/</guid><description>&lt;p>得益于最近正在移植的 iPXE，Archlinux 现在可以通过网络来安装系统，用户只需事先下载1、2MB的小镜像，即可实现引导进入 Archlinux 安装环境。&lt;/p>
+&lt;p>详情请阅读&lt;a href="https://loongarchlinux.org/pages/netboot/">这里&lt;/a>
+&lt;/p></description></item><item><title>仓库变更及python2清理</title><link>https://loongarchlinux.org/posts/removing-python2/</link><pubDate>Wed, 28 Dec 2022 10:15:08 +0800</pubDate><guid>https://loongarchlinux.org/posts/removing-python2/</guid><description>&lt;h2 id="仓库变更">仓库变更&lt;/h2>
+&lt;p>由于原来的 &lt;a href="https://mirrors.wsyu.edu.cn/loongarch/2022.09/" target="_blank">2022.09&lt;/a>
+目录，已经无法代表当前的 Archlinux 状态，故将其修改为 &lt;a href="https://mirrors.wsyu.edu.cn/loongarch/archlinux/" target="_blank">archlinux&lt;/a>
+。&lt;/p>
+&lt;p>由于原来的二进制仓库 [aur] 与 AUR 用户仓库同名，在互相交流时会带来歧义，故将原 [aur] 二进制仓库改名为 [laur]，此仓库会提供部分 LoongArch 架构相关的典型应用，或 AUR 上重要的二进制软件包。&lt;/p></description></item><item><title>Debuginfod 服务</title><link>https://loongarchlinux.org/posts/debuginfod/</link><pubDate>Tue, 25 Oct 2022 18:51:47 +0800</pubDate><guid>https://loongarchlinux.org/posts/debuginfod/</guid><description>&lt;p>Loong Arch Linux 现在提供调试符号（debug）包和 debuginfod 服务。&lt;/p>
+&lt;p>debuginfod 服务将为 Loong Arch Linux 上的软件提供调试符号信息和源码列表，这些可以被调试器比如 gdb 和 delve 利用。&lt;/p>
+&lt;p>系统中已经默认设置好 &lt;code>DEBUGINFOD_URLS&lt;/code> 环境变量，无需自行设置，您需要做的就是直接运行调试器，比如：&lt;/p></description></item></channel></rss>
