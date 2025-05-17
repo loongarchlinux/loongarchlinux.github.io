@@ -75,10 +75,3 @@ jobs:
           platforms: ${{ matrix.IMAGE.DOCKER_PLATFORM }}
           pull: true
           push: ${{ (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main' }}
-      - name: Attese
-        uses: actions/attest-build-provenance@db473fddc028af60658334401dc6fa3ffd8669fd # v2.3.0
-        with:
-          subject-name: "ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}"
-          subject-digest: ${{ steps.docker-build.outputs.digest }}
-          push-to-registry: true
-        if: (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
