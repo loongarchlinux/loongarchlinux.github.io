@@ -1,0 +1,85 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=theme-color content="#08C"><title>Loong Arch Linux 安装指南 - Loong Arch Linux</title>
+<link rel=apple-touch-icon href=https://loongarchlinux.org/images/favicons/apple-touch-icon.png sizes=180x180><link rel=icon href=https://loongarchlinux.org/images/favicons/favicon-32x32.png sizes=32x32 type=image/png><link rel=icon href=https://loongarchlinux.org/images/favicons/favicon-16x16.png sizes=16x16 type=image/png><link rel=manifest href=https://loongarchlinux.org/images/favicons/manifest.json><link rel=icon href=https://loongarchlinux.org/images/favicons/favicon.ico><meta name=description content><meta itemprop=name content="Loong Arch Linux 安装指南"><meta itemprop=description content="TUI安装（推荐） 自2023.07 版本之后，会自动进入安装界面。
+如果您使用早期版本，可运行以下命令来进入安装界面：
+# archinstall 对于中文用户来说，可参考以下配置建议：
+镜像区域 请设置为 China, 以提高软件包下载速度 本地语言 请设置为 zh_CN，以自动安装中文字体和输入法 磁盘布局 中的文件系统格式，建议选择为 ext4（测试中发现内核的 xfs 文件系统有bug) 引导加载程序 建议设置为 grub-install 交换分区 请根据实际情况决定是否启用 配置文件 可以选择桌面(desktop)、最小化(minimal)、服务器(server)及图形(xorg)环境安装，桌面推荐 xfce4 或 mate，显卡驱动请选择应选择 AMD / ATI (open-source) 音频 推荐设置为 pipewire 内核 请设置为 linux 网络配置 推荐设置为 NetworkManager 时区 推荐设置为 Asia/Shanghai 自动时间同步 (NTP) 建议启用 设置完成之后，界面大致会显示如下："><meta itemprop=datePublished content="2023-06-11T17:44:03+08:00"><meta itemprop=dateModified content="2023-06-11T17:44:03+08:00"><meta itemprop=wordCount content="1215"><meta property="og:url" content="https://loongarchlinux.org/pages/install/"><meta property="og:site_name" content="Loong Arch Linux"><meta property="og:title" content="Loong Arch Linux 安装指南"><meta property="og:description" content="TUI安装（推荐） 自2023.07 版本之后，会自动进入安装界面。
+如果您使用早期版本，可运行以下命令来进入安装界面：
+# archinstall 对于中文用户来说，可参考以下配置建议：
+镜像区域 请设置为 China, 以提高软件包下载速度 本地语言 请设置为 zh_CN，以自动安装中文字体和输入法 磁盘布局 中的文件系统格式，建议选择为 ext4（测试中发现内核的 xfs 文件系统有bug) 引导加载程序 建议设置为 grub-install 交换分区 请根据实际情况决定是否启用 配置文件 可以选择桌面(desktop)、最小化(minimal)、服务器(server)及图形(xorg)环境安装，桌面推荐 xfce4 或 mate，显卡驱动请选择应选择 AMD / ATI (open-source) 音频 推荐设置为 pipewire 内核 请设置为 linux 网络配置 推荐设置为 NetworkManager 时区 推荐设置为 Asia/Shanghai 自动时间同步 (NTP) 建议启用 设置完成之后，界面大致会显示如下："><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="pages"><meta property="article:published_time" content="2023-06-11T17:44:03+08:00"><meta property="article:modified_time" content="2023-06-11T17:44:03+08:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Loong Arch Linux 安装指南"><meta name=twitter:description content="TUI安装（推荐） 自2023.07 版本之后，会自动进入安装界面。
+如果您使用早期版本，可运行以下命令来进入安装界面：
+# archinstall 对于中文用户来说，可参考以下配置建议：
+镜像区域 请设置为 China, 以提高软件包下载速度 本地语言 请设置为 zh_CN，以自动安装中文字体和输入法 磁盘布局 中的文件系统格式，建议选择为 ext4（测试中发现内核的 xfs 文件系统有bug) 引导加载程序 建议设置为 grub-install 交换分区 请根据实际情况决定是否启用 配置文件 可以选择桌面(desktop)、最小化(minimal)、服务器(server)及图形(xorg)环境安装，桌面推荐 xfce4 或 mate，显卡驱动请选择应选择 AMD / ATI (open-source) 音频 推荐设置为 pipewire 内核 请设置为 linux 网络配置 推荐设置为 NetworkManager 时区 推荐设置为 Asia/Shanghai 自动时间同步 (NTP) 建议启用 设置完成之后，界面大致会显示如下："><link rel=stylesheet href=https://loongarchlinux.org/css/bundle.min.6617023236fd2f4fc2926aad19a1f7c7f5cf3f54da164b7e66fa191bc0df50b7.css integrity="sha256-ZhcCMjb9L0/CkmqtGaH3x/XPP1TaFkt+ZvoZG8DfULc=" crossorigin=anonymous><script src=https://loongarchlinux.org/js/bundle.min.768bdeb9bd73ab1cd90d33fc2593fe406eda212a75f1ae4863387500ef723cbb.js integrity="sha256-doveub1zqxzZDTP8JZP+QG7aISp18a5IYzh1AO9yPLs=" crossorigin=anonymous></script></head><body><div id=archnavbar class=anb-home><div id=archnavbarlogo><h1><a href=/ title="Loong Arch Linux">Loong Arch Linux</a></h1></div><div id=archnavbarmenu><ul id=archnavbarlist><li class=anb-首页><a href=/ title=返回到主页面>首页</a></li><li class=anb-软件包><a href=/packages/ title="Loong Arch Linux 软件包数据库">软件包</a></li><li class=anb-AUR><a href=https://aur.archlinux.org/ title="Arch Linux User Repository" target=_blank>AUR</a></li><li class=anb-下载><a href=/pages/download/ title="下载 Loong Arch Linux">下载</a></li></ul></div></div><div id=content><div id=archdev-navbar></div><div itemscope itemtype=http://schema.org/Article class="news-article box"><h2 itemprop=headline>Loong Arch Linux 安装指南</h2><meta itemprop=dateCreated content="2023年06月11日"><meta itemprop=datePublished content="2023年06月11日"><meta itemprop=dateModified content="2023年06月11日"><meta itemprop=inLanguage content="en"><meta itemprop=wordCount content="1215"><div class=itemprop itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=name content></div><div class=itemprop itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Loong Arch Linux"></div><p class=article-info>2023年06月11日 -</p><div class=article-content itemprop=articleBody><h2 id=tui安装推荐>TUI安装（推荐）</h2><p>自2023.07 版本之后，会自动进入安装界面。</p><p>如果您使用早期版本，可运行以下命令来进入安装界面：</p><pre tabindex=0><code># archinstall
+</code></pre><p>对于中文用户来说，可参考以下配置建议：</p><ul><li><strong>镜像区域</strong> 请设置为 <code>China</code>, 以提高软件包下载速度</li><li><strong>本地语言</strong> 请设置为 <code>zh_CN</code>，以自动安装中文字体和输入法</li><li><strong>磁盘布局</strong> 中的文件系统格式，建议选择为 <code>ext4</code>（测试中发现内核的 <code>xfs</code> 文件系统有bug)</li><li><strong>引导加载程序</strong> 建议设置为 <code>grub-install</code></li><li><strong>交换分区</strong> 请根据实际情况决定是否启用</li><li><strong>配置文件</strong> 可以选择桌面(desktop)、最小化(minimal)、服务器(server)及图形(xorg)环境安装，桌面推荐 <code>xfce4</code> 或 <code>mate</code>，显卡驱动请选择应选择 <code>AMD / ATI (open-source)</code></li><li><strong>音频</strong> 推荐设置为 <code>pipewire</code></li><li><strong>内核</strong> 请设置为 <code>linux</code></li><li><strong>网络配置</strong> 推荐设置为 <code>NetworkManager</code></li><li><strong>时区</strong> 推荐设置为 <code>Asia/Shanghai</code></li><li><strong>自动时间同步 (NTP)</strong> 建议启用</li></ul><p>设置完成之后，界面大致会显示如下：</p><p><img class=img-fluid src=/pages/images/archinstall.png alt loading=lazy></p><h2 id=手工安装>手工安装</h2><p>参考文档：</p><ul><li><a href=https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97 target=_blank>Archlinux Wiki 安装指南</a></li><li><a href=https://bbs.loongarch.org/d/88-archlinux target=_blank>LA UOSC 安装指南</a></li></ul><h3 id=1-分区>1. 分区</h3><p>使用 cfdisk 对磁盘分区，假定要被分区的磁盘为 <em>/dev/the_disk_to_be_partitioned</em></p><pre tabindex=0><code># cfdisk /dev/the_disk_to_be_partitioned  #要被分区的磁盘
+</code></pre><p>分区表类型：<strong>gpt</strong></p><p>分区最基本要求：</p><ul><li>一个 EFI 分区， 类型为 &ldquo;EFI 系统&rdquo; ，大小不小于200M，建议500M，假定为 <em>/dev/efi_system_partition</em></li><li>一个根分区，类型为 “Linux root (LoongArch-64)" ，假定为 <em>/dev/root_partition</em></li></ul><h3 id=2-格式化>2. 格式化</h3><pre tabindex=0><code># mkfs.ext4 /dev/root_partition            #格式化根分区
+# mkfs.fat -F 32 /dev/efi_system_partition #格式化EFI系统分区
+</code></pre><h3 id=3-挂载分区>3. 挂载分区</h3><p>将根磁盘卷挂载到 /mnt，例如：</p><pre tabindex=0><code># mount /dev/root_partition /mnt
+</code></pre><p>挂载 EFI 系统分区：</p><pre tabindex=0><code># mount --mkdir /dev/efi_system_partition /mnt/boot/efi
+</code></pre><h3 id=4-安装软件包>4. 安装软件包</h3><pre tabindex=0><code># pacstrap /mnt base base-devel linux linux-firmware networkmanager grub efibootmgr
+</code></pre><h3 id=5-生成新系统的-fstab>5. 生成新系统的 Fstab</h3><p>用以下命令生成 fstab 文件 (用 -U 或 -L 选项设置 UUID 或卷标)：</p><pre tabindex=0><code># genfstab -U /mnt &gt; /mnt/etc/fstab
+</code></pre><h3 id=6-chroot>6. Chroot</h3><p>chroot 到新安装的系统：</p><pre tabindex=0><code># arch-chroot /mnt
+</code></pre><h3 id=7-配置系统>7. 配置系统</h3><pre tabindex=0><code># ## 时区
+# ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+# hwclock --systohc
+
+# ## 本地化
+# sed -i -e &#39;s/#zh_CN.UTF-8/zh_CN.UTF-8/&#39; -e &#39;s/#en_US.UTF-8/en_US.UTF-8/&#39; /etc/locale.gen
+# locale-gen
+# echo LANG=zh_CN.UTF-8 &gt; /etc/locale.conf
+
+# ## 主机名（如myhostname）
+# echo myhostname &gt; /etc/hostname
+# echo &#34;127.0.0.1 localhost&#34; &gt;&gt; /etc/hosts
+# echo &#34;::1       localhost&#34; &gt;&gt; /etc/hosts
+# echo &#34;127.0.1.1 myhostname.localdomain myhostname&#34; &gt;&gt; /etc/hosts
+
+# ## initramfs
+# mkinitcpio -P
+
+# ## 创建帐户（如user)
+# useradd -m -G wheel user
+# passwd user
+
+# ## 设置root密码
+# passwd
+
+# ## 网络服务
+# systemctl enable NetworkManager.service
+
+# ## 引导器
+# grub-install
+# grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre><h3 id=8-桌面环境>8. 桌面环境</h3><pre tabindex=0><code># ## 安装基本图形系统 xorg
+# pacman -Sy --needed xorg xorg-server xf86-video-amdgpu xf86-video-ati xf86-video-loongson
+
+# ## 安装桌面环境(xfce4/mate/gnome/kde)
+# pacman -Sy --needed xfce4
+# pacman -Sy --needed mate
+# pacman -Sy --needed gnome
+# pacman -Sy --needed plasma-meta
+
+# ## 安装显示管理器(lightdm/gdm/sddm)
+# pacman -Sy --needed lightdm lightdm-gtk-greeter
+# pacman -Sy --needed gdm
+# pacman -Sy --needed sddm
+# systemctl enable &lt;DM&gt; # DM 为 lightdm、gdm、sddm 三选一
+</code></pre><h3 id=9-字体及输入法>9. 字体及输入法</h3><pre tabindex=0><code># ## 安装中文字体
+# pacman -Sy wqy-microhei wqy-microhei-lite wqy-zenhei
+# fc-cache -fv
+
+# ## 安装输入法
+# pacman -Sy --needed fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-qt
+# cat &gt; /etc/X11/xinit/xinitrc.d/50-input.sh &lt;&lt; EOF
+export XIM=fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=&#34;@im=fcitx&#34;
+EOF
+# chmod +x /etc/X11/xinit/xinitrc.d/50-input.sh
+</code></pre><h2 id=常见问题>常见问题</h2><ol><li>签名无效</li></ol><p>进入archlinux 安装环境之后，运行 <code>pacman -Sy</code> 命令，遇到如下错误：</p><pre tabindex=0><code>错误：core: 来自 &#34;65D4986C7904C6DBF2C4DD9A4E4E02B70BA5C468&#34; 的签名是未知信任的
+错误：extra: 密钥 &#34;65D4986C7904C6DBF2C4DD9A4E4E02B70BA5C468&#34; 未知
+错误：密钥环不可写
+错误：未能同步所有数据库（无效或已损坏的数据库（PGP 签名))
+</code></pre><p>从iso启动之后，会自动运行 <code>pacman-key</code> 来初始化签名数据库，您可以重启系统，并等待后台 <code>pacman-key</code> 进程结束即可。</p><p>或者，在不重启系统的情况下，分别运行以下命令，重建本地签名数据库即可恢复正常：</p><pre tabindex=0><code>pacman-key --init
+pacman-key --populate archlinux
+</code></pre><ol start=2><li>如何关闭 <code>archinstall</code> 测试镜像连接？</li></ol><p>运行 <code>archinstall</code> 时，会长时间显示如下内容：</p><pre tabindex=0><code>Testing connectivity to the Arch Linux mirrors ...
+</code></pre><p>请耐心等待其结束，或者使用 <code>archinstall --skip-mirror-check</code> 命令重新运行。</p></div></div></div><div id=footer><p>Copyright © 2022-2025 Community Team. All Rights Reserved.</p><p>Powered by <a href=https://gohugo.io target=_blank>Hugo</a> and the <a href=https://github.com/razonyang/hugo-theme-bootstrap target=_blank>Bootstrap</a> theme.</p></div></body></html>
