@@ -7,11 +7,13 @@ on:
     - cron: "0 0 * * FRI"
   pull_request:
     paths:
+      - ".github/docker/Dockerfile"
       - ".github/workflows/docker-images.yml"
   push:
     branches:
       - main
     paths:
+      - ".github/docker/Dockerfile"
       - ".github/workflows/docker-images.yml"
 
 jobs:
