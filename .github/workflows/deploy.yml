@@ -1,8 +1,12 @@
-name: deploy
+name: Deploy Github Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+    paths:
+      - "!.github/docker/Dockerfile"
+      - "!.github/workflows/docker-images.yml"
 
 jobs:
   build:
